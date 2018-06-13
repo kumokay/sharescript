@@ -1,0 +1,2 @@
+# sharescript
+some scripts
