@@ -15,6 +15,8 @@ from AirSimClient import *
 ip = sys.argv[1]
 port = 41451 + int(sys.argv[2])
 
+print port
+
 # connect to the AirSim simulator
 client = MultirotorClient(ip, port)
 client.confirmConnection()
@@ -27,10 +29,12 @@ print("state: %s" % s)
 
 client.takeoff()
 
+#client.wait_key('press anykey')
+
 state = client.getMultirotorState()
 print("state: %s" % pprint.pformat(state))
 
-client.moveToPosition(-20, 10, -30, 5)
+client.moveToPosition(-20, 100, -30, 5)
 
 client.hover()
 

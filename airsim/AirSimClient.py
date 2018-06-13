@@ -509,10 +509,12 @@ class AirSimClientBase:
 
 # -----------------------------------  Multirotor APIs ---------------------------------------------
 class MultirotorClient(AirSimClientBase, object):
-    def __init__(self, ip = "", timeout = 3600):
+    def __init__(self, ip = "", port = "", timeout = 3600):
         if (ip == ""):
             ip = "127.0.0.1"
-        super(MultirotorClient, self).__init__(ip, 41451, timeout_value = timeout)
+        if (port == ""):
+            port = 41451
+        super(MultirotorClient, self).__init__(ip, port, timeout_value = timeout)
 
     def takeoff(self, max_wait_seconds = 15):
         return self.client.call('takeoff', max_wait_seconds)
