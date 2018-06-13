@@ -5,6 +5,7 @@ USAGE: python SCRIPT_NAME AIRSIM_SERVER_IP DRONE_ID
 """
 
 import os
+import time
 import tempfile
 import pprint
 import sys
@@ -32,6 +33,9 @@ print("state: %s" % pprint.pformat(state))
 client.moveToPosition(-20, 10, -30, 5)
 
 client.hover()
+
+
+time.sleep(5)
 
 state = client.getMultirotorState()
 print("state: %s" % pprint.pformat(state))
