@@ -29,7 +29,7 @@ client.takeoff()
 state = client.getMultirotorState()
 print("state: %s" % pprint.pformat(state))
 
-#client.moveToPosition(-10, 10, -10, 5)
+client.moveToPosition(-20, 10, -30, 5)
 
 client.hover()
 
